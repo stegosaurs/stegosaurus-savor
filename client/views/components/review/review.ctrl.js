@@ -3,7 +3,6 @@
 
     //to get the filename of the pic uploaded.
     $scope.photoUploaded = false;
-
     var pic;
     $scope.picName;
 
