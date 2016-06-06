@@ -5,6 +5,7 @@ var jwt = require('express-jwt');
 var cors = require('cors');
 var port = process.env.PORT || 4000;
 var morgan = require('morgan');
+//multer used for photo uploading
 var multer = require('multer');
 
 // Set up mongoose
@@ -61,20 +62,19 @@ app.get('/api/restaurants', handler.getRestaurants);
 
 app.get('/api/restaurants/:id', handler.getOneRestaurant);
 
-
 app.put('/api/restaurants:id', handler.updateRestaurantInfo);
 
 app.delete('/api/users/:id', handler.deleteRestaurant);
 
 //photo upload
 app.post('/uploads', function(req, res) {
-    upload(req,res,function(err){
-        if(err){
-             res.json({error_code:1,err_desc:err});
-             return;
-        }
-         res.json({error_code:0,err_desc:null});
-    });
+  upload(req,res,function(err){
+    if(err){
+      res.json({error_code:1,err_desc:err});
+      return;
+    }
+    res.json({error_code:0,err_desc:null});
+  });
 });
 
 app.use('/uploads', express.static(__dirname + '/uploads'));
@@ -83,28 +83,3 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 var port = process.env.PORT || 4000;
 app.listen(port);
 console.log('Listening at port: ' + port);
-
-
-
-
-
-
-
-
-
-// //exposes the id from mongodb to an API.
-// app.get('/api/restaurant/:id', function(req, res){
-//   Restaurant.findById(req.params.id, function(err, data){
-//     res.json(data);
-//   });
-// });
-
-// app.delete('/api/restaurant/:id', function(req, res){
-//   Restaurant.remove({_id: req.params.id}, function(err, doc){
-//     console.log(err);
-//     console.log(doc);
-//     Restaurant.findById(req.params.id, function(err, data){
-//       res.json(data);
-//     });
-//   });
-// });

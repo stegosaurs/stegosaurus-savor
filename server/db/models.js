@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 
-// Create the schema
 var restSchema = new mongoose.Schema({
   restaurantName: String,
   restaurantAddress: String,
