@@ -49,4 +49,4 @@ Once the project moves into development, the press release can be used as a touc
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
-    Go to www.stegosavor.herokuapp.com to truly start making meal memories that will last a lifetime!
+    Go to https://stegosavor.herokuapp.com/ to truly start making meal memories that will last a lifetime!
