@@ -1,73 +1,70 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html >
   <head>
     <meta charset="UTF-8">
-    <title>Form Submission</title>
+    <title>Form Submission</title> -->
       <link rel='stylesheet prefetch' href='https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.min.css'>
       <link rel='stylesheet prefetch' href='https://material.angularjs.org/1.1.0-rc4/docs.css'>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="css/style.css">
-  </head>
+  <!-- </head> -->
+  
   <body ng-app = "app">
+    <div ng-controller="reviewController" layout="column" layout-padding="" ng-cloak="">
 
-<div ng-controller="reviewController" layout="column" layout-padding="" ng-cloak="">
+      <md-content class="md-no-momentum">
 
-  <md-content class="md-no-momentum">
+        <md-input-container class="md-icon-float md-block">
+          <md-icon><i class="material-icons" class="name">restaurant</i></md-icon>
+          <input ng-model="restaurant.name" type="text" placeholder="Restaurant">
+        </md-input-container>
 
-    <md-input-container class="md-icon-float md-block">
-      <md-icon><i class="material-icons" class="name">restaurant</i></md-icon>
-      <input ng-model="restaurant.name" type="text" placeholder="Restaurant">
-    </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+          <md-icon><i class="material-icons" class="name">home</i></md-icon>
+          <input ng-model="restaurant.address" type="text" placeholder="Address">
+        </md-input-container>
 
-    <md-input-container class="md-icon-float md-block">
-      <md-icon><i class="material-icons" class="name">home</i></md-icon>
-      <input ng-model="restaurant.address" type="text" placeholder="Address">
-    </md-input-container>
-  </md-content>
+      </md-content>
 
-    <p>Choose a score 1-5 for the following categories</p>
-    <div layout="row">
-      <md-input-container flex>
-      <md-icon><i class="material-icons" class="name">spa</i></md-icon>
-        <input ng-model="ambience" type="text" placeholder="Ambience">
+      <p>Choose a score 1-5 for the following categories</p>
+      <div layout="row">
+        <md-input-container flex>
+        <md-icon><i class="material-icons" class="name">spa</i></md-icon>
+          <input ng-model="ambience" type="text" placeholder="Ambience">
+        </md-input-container>
+
+        <md-input-container flex>
+        <md-icon><i class="material-icons" class="name">local_pizza</i></md-icon>
+          <input ng-model="food" type="text" placeholder="Food">
+        </md-input-container>
+
+        <md-input-container flex>
+        <md-icon><i class="material-icons" class="name">room_service</i></md-icon>
+          <input ng-model="service" type="text" placeholder="Service">
+        </md-input-container>
+
+        <md-input-container flex>
+        <md-icon><i class="material-icons" class="name">attach_money</i></md-icon>
+          <input ng-model="price" type="text" placeholder="Price">
+        </md-input-container>
+      </div>
+
+      <md-input-container md-no-float='' class="md-block">
+        <span>{{200 - restaurant.review.length}} Characters remaining</span>
+        <md-icon><i class="material-icons" class="name">chat</i></md-icon>
+        <input ng-model="restaurant.review" ng-trim="false" maxlength="200" type="text" placeholder="200 Characters"><br><br>
+        <p ng-show="photoUploaded">{{picName}} uploaded!</p>
       </md-input-container>
 
-      <md-input-container flex>
-      <md-icon><i class="material-icons" class="name">local_pizza</i></md-icon>
-        <input ng-model="food" type="text" placeholder="Food">
-      </md-input-container>
-
-      <md-input-container flex>
-      <md-icon><i class="material-icons" class="name">room_service</i></md-icon>
-        <input ng-model="service" type="text" placeholder="Service">
-      </md-input-container>
-
-      <md-input-container flex>
-      <md-icon><i class="material-icons" class="name">attach_money</i></md-icon>
-        <input ng-model="price" type="text" placeholder="Price">
-      </md-input-container>
+      <div layout="row">
+        <!-- CHOOSE PIC BUTTON -->
+        <input class="ng-hide" ngf-select ng-model="up.file" type="file" id="file" name="file">
+        <label for="file" class="md-button md-raised md-primary">CHOOSE PHOTO</label>
+        <!-- UPLOAD PIC BUTTON -->
+        <md-button class="md-buton md-raised md-primary" ng-click="add()">UPLOAD PHOTO</md-button>
+        <!-- SUBMIT BUTTON -->
+        <md-button class="md-warn md-raised md-hue-2" ng-click="sendPost()">SUBMIT!</md-button>
+      </div>
     </div>
-
-    <md-input-container md-no-float='' class="md-block">
-      <span>{{200 - restaurant.review.length}} Characters remaining</span>
-      <md-icon><i class="material-icons" class="name">chat</i></md-icon>
-      <input ng-model="restaurant.review" ng-trim="false" maxlength="200" type="text" placeholder="200 Characters"><br><br>
-      <p ng-show="photoUploaded">{{picName}} uploaded!</p>
-    </md-input-container>
-
-    <div layout="row">
-      <!-- UPLOAD PIC BUTTON -->
-<!-- <input type="file" ngf-select ng-model="up.file" name="file" /> -->
-      
-      <input class="ng-hide" ngf-select ng-model="up.file" type="file" id="file" name="file">
-      <label for="file" class="md-button md-raised md-primary">CHOOSE PHOTO</label>
-      <md-button class="md-buton md-raised md-primary" ng-click="add()">UPLOAD PHOTO</md-button>
-      <md-button class="md-warn md-raised md-hue-2" ng-click="sendPost()">SUBMIT!</md-button>
-
-    </div>
-
-</div>
-
-</body>
+  </body>
 </html>
-

@@ -1,32 +1,16 @@
-<!-- components/toolbar/toolbar.tpl.html -->
+<!-- My CSS -->
+<link rel="stylesheet" href="./styles.css">
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<!-- <head> -->
-
-
-  <!-- My CSS -->
-  <link rel="stylesheet" href="./styles.css">
-  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
- <!--  Latest compiled and minified CSS -->
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
-
-<!-- Optional theme -->
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> -->
-
-<!-- Latest compiled and minified JavaScript -->
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
-
-  
-  
-<!-- </head> -->
 <body>
 
-<md-toolbar>
+  <md-toolbar>
   <div class="md-toolbar-tools themer">
-  <img class= "logo" src="/views/components/toolbar/SAVOR4XWHITEXBLACK.png">
+    <img class= "logo" src="/views/components/toolbar/SAVOR4XWHITEXBLACK.png">
     <span flex></span>
     
+    <!-- LOGIN BUTTON -->
     <md-button
       aria-label="Login"
       ui-sref="toolbar"
@@ -35,6 +19,7 @@
       Login
     </md-button>
 
+    <!-- PENCIL WRITE REVIEW BUTTON -->
     <md-button
       ui-sref="user"
       aria-label="Write Review"
@@ -45,6 +30,7 @@
       <i class="material-icons" class="name">mode_edit</i></md-icon>
     </md-button>
 
+    <!-- LOGOUT BUTTON -->
     <md-button
       aria-label="Logout"
       ui-sref="toolbar"
@@ -52,11 +38,10 @@
       ng-click="toolbar.logout()">
       Logout
     </md-button>
-    
-
+   
   </div>
-<span class="container" ng-if="!toolbar.auth.isAuthenticated">
-  <img class= "rotatingLogo" src="/views/components/toolbar/SAVOR4XWHITEXBLACK.png">
-</span>
-</md-toolbar>
+  <span class="container" ng-if="!toolbar.auth.isAuthenticated">
+    <img class= "rotatingLogo" src="/views/components/toolbar/SAVOR4XWHITEXBLACK.png">
+  </span>
+  </md-toolbar>
 </body>

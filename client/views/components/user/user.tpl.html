@@ -42,14 +42,13 @@
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
 
   <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
   <!-- My Scripts -->
   <script src="app.js"></script>
@@ -58,87 +57,71 @@
   <script src="/views/components/toolbar/toolbar.dir.js"></script>
   <script src="/views/components/profile/profile.ctrl.js"></script>
 
-
-
 </head>
 
 <body ng-app="savor" ng-controller="savorCtrl">
 
-  <div layout="column" >
-    <!-- <md-toolbar class="md-hue-1" ng-show="showSearch">
-      <div class="md-toolbar-tools">
-        <md-input-container flex>
-          <label>&nbsp;</label>
-          <input ng-model="search.who" placeholder="enter search">
-        </md-input-container>
-        <md-button aria-label="Search" ng-click="showSearch = !showSearch">
-          <i class="material-icons" class="name" layout-align="enc center">search</i></md-icon>
-        </md-button>
-      </div>
-    </md-toolbar> -->
+  <div layout="column">
+    <div class="md-media-lg card-media" layout-padding><img ng-src="{{ profile.picture }}"><h1 id="username">{{profile.nickname}}</h1></div>
+    <br>
+    <p id="restaurantCount">Restaurants Visited: {{restaurants.length}}</p>
+    <br>
 
-  <div class="md-media-lg card-media" layout-padding><img ng-src="{{ profile.picture }}"><h1 id="username">{{profile.nickname}}</h1></div>
-  <br>
-  <p id="restaurantCount">Restaurants Visited: {{restaurants.length}}</p>
-  <br>
+  
+    <section layout="row" layout-sm="column" layout-align="center" layout-wrap >
+      <!--  SORTBY (ended up not implementing sorting logic)-->
+      <!-- <md-input-container flex>
+        <md-icon><i class="material-icons" class="name"></i></md-icon>
+          <label>Sort By</label>
+          <md-select ng-model="service">
+            <md-option value="A - Z">
+              A-Z
+            </md-option>
+            <md-option value="Newest - Oldest">
+              Newest-Oldest
+            </md-option>
+          </md-select>
+      </md-input-container> -->
 
- <!--  SORTBY -->
-
-  <!-- <section layout="row" layout-sm="column" layout-align="center" layout-wrap >
-    <md-input-container flex>
-      <md-icon><i class="material-icons" class="name"></i></md-icon>
-        <label>Sort By</label>
-        <md-select ng-model="service">
-          <md-option value="A - Z">
-            A-Z
-          </md-option>
-          <md-option value="Newest - Oldest">
-            Newest-Oldest
-          </md-option>
-        </md-select>
-    </md-input-container> -->
-
-<!--     SEARCH -->
-    <md-input-container class="md-icon-float md-block" flex>
-      <md-icon><i class="material-icons" class="name"></i>search</md-icon>
-      <input ng-model="searchRestaurant" type="text" placeholder="Search Here">
-
-        {{restaurant.restaurantAddress}}
-    </md-input-container>
-  </section>
+      <!-- SEARCH -->
+      <md-input-container class="md-icon-float md-block" flex>
+        <md-icon><i class="material-icons" class="name"></i>search</md-icon>
+        <input ng-model="searchRestaurant" type="text" placeholder="Search Here">
+      </md-input-container>
+    </section>
 
 
-<!-- RESTAURANT RENDER -->
-  <div ng-repeat="restaurant in restaurants | filter:searchRestaurant">
-    <md-content id="start" flex>
-      <div id="container">
-        <div id="content">
-          <div class="row">
-            <div class="col-md-4">
-              <img id="restphoto" src={{restaurant.image}} alt="">
-            </div>
-            <div class="col-md-8">
-            <h1>{{restaurant.restaurantName}}</h1>
-                <div class="restinfo">
-                  <p><strong>{{restaurant.restaurantAddress}}</strong></p>
-                  <p>{{restaurant.restaurantReview}}</p>
-                </div>
-              <h3>Ratings</h3>
-                <div class ="ratinginfo">
-                  <ul>
-                    <li>Food: {{restaurant.foodRating}}</li>
-                    <li>Service: {{restaurant.serviceRating}}</li>
-                    <li>Ambience: {{restaurant.ambienceRating}}</li>
-                    <li>Price per: {{'$' + restaurant.priceRating}}</li>
-                  </ul>
-                </div>
+    <!-- RESTAURANT RENDER -->
+    <div ng-repeat="restaurant in restaurants | filter:searchRestaurant">
+      <md-content id="start" flex>
+        <div id="container">
+          <div id="content">
+            <div class="row">
+              <div class="col-md-4">
+                <img id="restphoto" src={{restaurant.image}} alt="">
+              </div>
+              <div class="col-md-8">
+              <h1>{{restaurant.restaurantName}}</h1>
+                  <div class="restinfo">
+                    <p><strong>{{restaurant.restaurantAddress}}</strong></p>
+                    <p>{{restaurant.restaurantReview}}</p>
+                  </div>
+                <h3>Ratings</h3>
+                  <div class ="ratinginfo">
+                    <ul>
+                      <li>Food: {{restaurant.foodRating}}</li>
+                      <li>Service: {{restaurant.serviceRating}}</li>
+                      <li>Ambience: {{restaurant.ambienceRating}}</li>
+                      <li>Price per: {{'$' + restaurant.priceRating}}</li>
+                    </ul>
+                  </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </md-content>
-  </div>
-  <div ui-view></div>
+      </md-content>
+    </div>
+    <div ui-view></div>
   </div>
 </body>
 </html>

@@ -1,12 +1,14 @@
-  angular
-    .module('savor.toolbar', [])// we need to sort this out
-    .directive('toolbar', toolbar);
-  
-    function toolbar() {
-    return {
-      templateUrl: '/views/components/toolbar/toolbar.tpl.html',
-      controller: toolbarController,
-      controllerAs: 'toolbar'
-    };
-  }
-  
+angular
+  .module('savor.toolbar', [])
+  .directive('toolbar', toolbar);
+
+  /**
+   * This directive allows us to use the toolbar
+   */
+  function toolbar() {
+  return {
+    templateUrl: '/views/components/toolbar/toolbar.tpl.html',
+    controller: toolbarController,
+    controllerAs: 'toolbar'
+  };
+}

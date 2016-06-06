@@ -2,7 +2,8 @@ var Restaurant = require('./models');
 var _ = require('underscore');
 
 module.exports = {
-    fetchAllById: function(clientID, callback) {
+  //function not being used...
+  fetchAllById: function(clientID, callback) {
     Restaurant.findById(clientID).then(function(err, restaurant) {
       if (err) {
         console.log(err);
@@ -21,7 +22,7 @@ module.exports = {
       }
     });
   },
-
+  //function not being used...
   fetchOne: function(id, callback) {
     Restaurant.findById(id).then(function(err, restaurant) {
       if (err) {
@@ -31,8 +32,7 @@ module.exports = {
       }
     })
   },
-  
-  
+
   addRestaurantReview: function(restaurant, callback) {
     var newRestaurant = new Restaurant(restaurant);
     newRestaurant.save(function(err, newEntry) {
@@ -43,7 +43,7 @@ module.exports = {
       }
     })
   },
-
+  //function not being used...
   updateOne: function(id, newProperties, callback) {
     //refactor to use promises?
     fetchOne(id, function(err, user) {
@@ -61,7 +61,7 @@ module.exports = {
       }
     })
   },
-
+  //function not being used...
   deleteOne: function(id, callback) {
     fetchOne(id, function(err, user) {
       if (err) {
