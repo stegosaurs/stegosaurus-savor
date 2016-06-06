@@ -1,12 +1,12 @@
-# Project Name
+# Savor
 
-> Pithy project description
+> A restaurant recollection application for food and beverage enthusiasts who desire to remember every meal.
 
 ## Team
 
-  - __Product Owner__: teamMember
-  - __Scrum Master__: teamMember
-  - __Development Team Members__: teamMember, teamMember
+  - __Product Owner__: Keeley Nakamoto
+  - __Scrum Master__: Gabriel Schrock
+  - __Development Team Members__: Leo Vergara, (Nick Fleischhauer)
 
 ## Table of Contents
 
@@ -20,15 +20,11 @@
 
 ## Usage
 
-> Some usage instructions
+> Go to https://stegosavor.herokuapp.com/ to use!
 
 ## Requirements
 
-- Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
-- etc
+- Node ^6.0.0
 
 ## Development
 
@@ -41,10 +37,11 @@ sudo npm install -g bower
 npm install
 bower install
 ```
+Make sure your bower_components folder is downloaded within the client folder.
 
 ### Roadmap
 
-View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
+View the project roadmap [here](https://github.com/stegosaurs/stegosaurus-savor/issues)
 
 
 ## Contributing
