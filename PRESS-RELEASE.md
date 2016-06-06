@@ -30,18 +30,23 @@ Once the project moves into development, the press release can be used as a touc
 
 ## Problem ##
   > Describe the problem your product solves.
-    Restaurant hobbyists typically must use 
+      Restaurant hobbyists typically must use hand-written journals to keep track of their eating adventures. These paper version can be easily damaged or lost. They are not easily searchable either and incapable of holding pictures (without the effort of printing and pasting them).
+
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+    With Savor, you will be able to create more consistent entries with standardized criteria for judgement. Instead of having to keep track of a physical notebook, your notes will always be available online with corresponding photos. No matter how many memories your have, your new setup will make them easily searchable.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
-
+      I'm not just a spokesperson for Savor, I'm a customer too. Savor allows restaurant enthusiasts to easily stay committed to their goal of documenting their restaurant experiences. It has never been easier to stay organized and timely with your meal memories.
 ## How to Get Started ##
   > Describe how easy it is to get started.
+    Get started in 3 easy steps. Create a Savor account, click the pencil icon to input your first memory, and then refresh the page to see your online restaurant recollection take shape!
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+    Before Savor, I had a hard time staying committed to my hobby. I love eating at restaurants, but taking the time to handwrite my thoughts about the meal was a pain. Now, it only takes me 2 minutes to add my opinions. I haven't forgotten a meal since.
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+    Go to www.stegosavor.herokuapp.com to truly start making meal memories that will last a lifetime!
