@@ -79,7 +79,7 @@
 
   <div class="md-media-lg card-media" layout-padding><img ng-src="{{ profile.picture }}"><h1 id="username">{{profile.nickname}}</h1></div>
   <br>
-  <p id="restaurantCount">Restaurants Visited: {{user.reviewCount}}</p>
+  <p id="restaurantCount">Restaurants Visited: {{restaurants.length}}</p>
   <br>
 
  <!--  SORTBY -->
@@ -106,7 +106,6 @@
         {{restaurant.restaurantAddress}}
     </md-input-container>
   </section>
-
 
 
 <!-- RESTAURANT RENDER -->

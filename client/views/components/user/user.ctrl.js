@@ -19,7 +19,6 @@ angular
       //     }
       //   });
       // })
-
     // };
     $scope.profile = JSON.parse(localStorage.getItem('profile'));
     

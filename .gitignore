@@ -29,6 +29,8 @@ dist/
 node_modules/
 bower_components/
 data/
+uploads/
+
 
 # Floobits
 .floo

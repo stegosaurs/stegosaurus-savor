@@ -2,6 +2,7 @@
   .controller('reviewController', function($scope, $http, ngDialog, Upload, $window) {
 
     //to get the filename of the pic uploaded.
+    $scope.photoUploaded = false;
     var pic;
     $scope.picName;
 
@@ -9,6 +10,7 @@
       pic = document.getElementById('file').files[0];
       console.log(pic.name);
       $scope.picName = pic.name;
+      $scope.photoUploaded = true;
     }
 
     $scope.sendPost = function () {
@@ -46,11 +48,11 @@
           url: 'http://localhost:4000/uploads', //webAPI exposed to upload the file
           data:{file:file} //pass file as data, should be user ng-model
         }).then(function (resp){ //upload function returns a promise
-          if(resp.data.error_code === 0){ //validate success
-            $window.alert('Success ' + that.up.file.name + 'uploaded. Response: ');
-          }else{
-            $window.alert('an error occured');
-          }
+          // if(resp.data.error_code === 0){ //validate success
+          //   $window.alert('Success ' + that.up.file.name + 'uploaded. Response: ');
+          // }else{
+          //   $window.alert('an error occured');
+          // }
         });
       };
 
@@ -62,5 +64,8 @@
         ngDialog.close();
         //doesn't do anything
         // window.refresh();
+
+        $scope.photoUploaded = false;
       };
+
   });

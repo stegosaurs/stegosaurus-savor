@@ -51,19 +51,18 @@
     <md-input-container md-no-float='' class="md-block">
       <span>{{200 - restaurant.review.length}} Characters remaining</span>
       <md-icon><i class="material-icons" class="name">chat</i></md-icon>
-      <input ng-model="restaurant.review" ng-trim="false" maxlength="200" type="text" placeholder="200 Characters">
+      <input ng-model="restaurant.review" ng-trim="false" maxlength="200" type="text" placeholder="200 Characters"><br><br>
+      <p ng-show="photoUploaded">{{picName}} uploaded!</p>
     </md-input-container>
 
     <div layout="row">
       <!-- UPLOAD PIC BUTTON -->
 <!-- <input type="file" ngf-select ng-model="up.file" name="file" /> -->
-
-      <input class= "ng-hide" ngf-select ng-model = "up.file" type="file" id="file" name="file"/>
-        {{picName + " ADDED!"}}
-      <label for="file" class="md-button md-raised md-primary">UPLOAD PHOTO</label>
-      <md-button class="md-buton md-raised md-primary" ng-click="add()">ADD PHOTO</md-button>
-
-        <md-button class="md-warn md-raised md-hue-2" ng-click="sendPost()">SUBMIT!</md-button>
+      
+      <input class="ng-hide" ngf-select ng-model="up.file" type="file" id="file" name="file">
+      <label for="file" class="md-button md-raised md-primary">CHOOSE PHOTO</label>
+      <md-button class="md-buton md-raised md-primary" ng-click="add()">UPLOAD PHOTO</md-button>
+      <md-button class="md-warn md-raised md-hue-2" ng-click="sendPost()">SUBMIT!</md-button>
 
     </div>
 
@@ -71,3 +70,4 @@
 
 </body>
 </html>
+
