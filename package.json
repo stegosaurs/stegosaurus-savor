@@ -12,6 +12,9 @@
     "Nick Randall",
     "Brent Colson"
   ],
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec specs/server/ServerSpec.js;"
+  },
   "dependencies": {
     "body-parser": "^1.4.3",
     "chai": "^3.5.0",
