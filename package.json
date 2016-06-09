@@ -6,7 +6,11 @@
     "Nick Fleischhauer",
     "Keeley Nakamoto",
     "Gabriel Schrock",
-    "Leo Vergara"
+    "Leo Vergara",
+    "Roger Sejas",
+    "S.B. Lee",
+    "Nick Randall",
+    "Brent Colson"
   ],
   "dependencies": {
     "body-parser": "^1.4.3",
