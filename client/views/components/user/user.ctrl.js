@@ -2,7 +2,7 @@
 var underscore = angular.module('underscore', []);
 underscore.factory('_', function() {
   //Underscore must already be loaded on the page
-  return window._; 
+  return window._;
 });
 
 angular
@@ -17,7 +17,7 @@ angular
     };*/
 
     $scope.profile = JSON.parse(localStorage.getItem('profile'));
-    
+
     function getAll() {
       var user = JSON.parse(window.localStorage.profile).email;
       $http.get('/api/restaurants').then(function(res) {
@@ -33,4 +33,3 @@ angular
     }
     getAll();
   })
-  
