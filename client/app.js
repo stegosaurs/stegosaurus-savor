@@ -4,8 +4,9 @@ angular
     'savor.review',
     'savor.profile',
     'savor.user',
-    'auth0',
-    'angular-storage',
+    'savor.home',
+    'auth0', 
+    'angular-storage', 
     'angular-jwt',
     'ui.router',
     'ngDialog',
@@ -41,7 +42,9 @@ angular
       controller: 'reviewController',
     })
     .state('/', {
-      url: '/'
+      url: '/',
+      templateUrl: '/views/components/home/home.tpl.html',
+      controller: 'homeController'
     });
 
     jwtInterceptorProvider.tokenGetter = function(store) {
