@@ -7,7 +7,12 @@
 
   <md-toolbar>
   <div class="md-toolbar-tools themer">
-    <img class= "logo" src="/views/components/toolbar/SAVOR4XWHITEXBLACK.png">
+    <img 
+      class= "logo" 
+      ui-sref="/"
+      src="/views/components/toolbar/SAVOR4XWHITEXBLACK.png"
+      ng-click="toolbar.goHome()"
+    >
     <span flex></span>
     
     <!-- LOGIN BUTTON -->
@@ -40,8 +45,5 @@
     </md-button>
    
   </div>
-  <span class="container" ng-if="!toolbar.auth.isAuthenticated">
-    <img class= "rotatingLogo" src="/views/components/toolbar/SAVOR4XWHITEXBLACK.png">
-  </span>
   </md-toolbar>
 </body>
