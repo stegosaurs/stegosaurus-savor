@@ -80,6 +80,6 @@ app.post('/uploads', function(req, res) {
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
 // Start server
-var port = process.env.PORT || 4000;
+var port = process.env.PORT || 3000;
 app.listen(port);
 console.log('Listening at port: ' + port);

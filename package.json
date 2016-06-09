@@ -31,5 +31,9 @@
     "nodemon": "^1.2.1",
     "request": "^2.36.0",
     "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp-nodemon": "^2.1.0"
   }
 }
