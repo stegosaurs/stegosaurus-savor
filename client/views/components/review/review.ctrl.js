@@ -1,5 +1,5 @@
 var app = angular.module('savor.review',['ngMaterial', 'ngMessages', 'material.svgAssetsCache', 'ngDialog', 'ngFileUpload'])
-.controller('reviewController', function($scope, $http, ngDialog, Upload, $window) {
+.controller('reviewController', function($state, $scope, $http, ngDialog, Upload, $window) {
 
   /**
    * [for the ng-show that displays once a photo has been uploaded]
