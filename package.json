@@ -13,7 +13,7 @@
     "Brent Colson"
   ],
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec specs/server/ServerSpec.js;"
+    "test": "./node_modules/.bin/mocha --reporter spec specs/integration/ServerSpec.js;"
   },
   "dependencies": {
     "body-parser": "^1.4.3",
@@ -39,6 +39,15 @@
   },
   "devDependencies": {
     "browser-sync": "^2.13.0",
-    "gulp-nodemon": "^2.1.0"
+    "chai": "^3.5.0",
+    "gulp-mocha": "^2.2.0",
+    "gulp-nodemon": "^2.1.0",
+    "karma": "^0.13.22",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^1.0.1",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "mocha": "^2.5.3",
+    "phantomjs-prebuilt": "^2.1.7",
+    "requirejs": "^2.2.0"
   }
 }
