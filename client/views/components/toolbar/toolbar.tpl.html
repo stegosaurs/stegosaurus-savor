@@ -26,13 +26,19 @@
 
     <!-- PENCIL WRITE REVIEW BUTTON -->
     <md-button
-      ui-sref="user"
       aria-label="Write Review"
       style="float:right" 
       ng-click="openReview()"
       ng-if="toolbar.auth.isAuthenticated"
-      aria-label="User">
       <i class="material-icons" class="name">mode_edit</i></md-icon>
+    </md-button>
+
+    <md-button
+      aria-label="User"
+      style="float:right" 
+      ui-sref="user"
+      ng-if="toolbar.auth.isAuthenticated"
+      <i class="material-icons">person</i>
     </md-button>
 
     <!-- LOGOUT BUTTON -->

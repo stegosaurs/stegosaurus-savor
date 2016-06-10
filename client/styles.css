@@ -1,11 +1,21 @@
 
+body, html {
+  height:auto !important;
+  position: initial !important;
+}
 html { overflow-y: scroll; }
 body {
-  background: #f0f0f0;
+  background-image: url('/assets/cuttingBoard.jpg');
+  background-color: #f0f0f0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #313131;
-  font-size: 62.5%;
   line-height: 1;
+}
+
+.lgContent {
+  margin:auto;
+  max-width: 960px;
+  background: white;
 }
 
 h1 {
@@ -80,11 +90,13 @@ h2 {
   vertical-align:bottom;
 }
 
-.container {
-  background-image: url('http://www.st-barths.com/eden-rock/uploads/images/Gallery/restaurant/Restaurant-(3).jpg');
-  background-size: cover;
-  height: 664px;
-  width: 1008px;
+.lgReview li, p{
+  color: white;
+}
+
+.marquee {
+  max-width: 100%;
+  height: auto;
 }
 
 .rotatingLogo {
@@ -93,9 +105,9 @@ h2 {
     left: 50%;
     width: 222px;
     margin: -60px 0 0 -85px;
-    -webkit-animation:spin 1s linear;
-    -moz-animation:spin 1s linear;
-    animation:spin 1s linear;
+    -webkit-animation:spin 1s ease-out;
+    -moz-animation:spin 1s ease-out;
+    animation:spin 1s ease-out;
 }
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
@@ -141,13 +153,6 @@ h2 > span {
   white-space: normal;
 }
 
-p {
-  display: block;
-  font-size: 1em;
-  line-height: 1.55em;
-  margin-bottom: 10px;
-  color: #000;
-}
 
 #username {
   padding-left: 20px;

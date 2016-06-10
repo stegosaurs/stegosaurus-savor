@@ -8,13 +8,6 @@ underscore.factory('_', function() {
 angular
   .module('savor.user',['ngMaterial', 'ngMessages', 'material.svgAssetsCache', 'underscore'])
   .controller('userController', function($scope, $http, _) {
-    //refresh function that was an attempt to get just added restaurant to render on page without a refresh
-    /*window.refresh = function() {
-      $http.get('/api/restaurants').then(function (response) {
-        console.log('hello');
-        $scope.restaurants = response.data;
-      })
-    };*/
 
     $scope.profile = JSON.parse(localStorage.getItem('profile'));
 
@@ -33,3 +26,9 @@ angular
     }
     getAll();
   })
+  .config(function($mdThemingProvider) {
+    $mdThemingProvider.theme('dark-grey').backgroundPalette('grey').dark();
+    $mdThemingProvider.theme('dark-orange').backgroundPalette('orange').dark();
+    $mdThemingProvider.theme('dark-purple').backgroundPalette('deep-purple').dark();
+    $mdThemingProvider.theme('dark-blue').backgroundPalette('blue').dark();
+  });
