@@ -3,9 +3,15 @@ var request = require('request');
 
 var app = require('../../server/server.js');
 var Restaurant = require('../../server/db/models.js');
-
+var port = process.env.PORT || 3000;
 
 describe('/rest - Restaurants', function () {
+  
+  var options = {
+    'method': 'GET',
+    'followAllRedirects': true,
+    'uri': 'http://localhost:' + port + '/api/restaurants'
+  };
 
   before(function (done) {
     Restaurant.find({}).then(function (docs) {
@@ -21,7 +27,7 @@ describe('/rest - Restaurants', function () {
       };
     }).then(function () {
       new Restaurant({
-        restaurantName: String,
+        restaurantName: "StripTs",
         restaurantAddress: "93 School St, Watertown, MA",
         priceRating: 10,
         serviceRating: 10,
@@ -42,12 +48,14 @@ describe('/rest - Restaurants', function () {
     });
   });
 
-  it('Retrieve all ', function (done) {
-
-      expect(true).to.equal(true);
+  it('Should Return List of all Restaurants', function (done) {
+    request(options, function (err, res) {
+      if(err) return done(err);
+      expect(res.statusCode).to.equal(200);
+      expect(JSON.parse(res.body)).to.have.lengthOf(1);
       done();
-
-  });
+    });
+    });
 
 });
 
