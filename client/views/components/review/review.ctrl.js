@@ -38,7 +38,7 @@
         //useremail file is parsed into the windowlocal storage
         userEmail: JSON.parse(window.localStorage.profile).email,
         //saves image in uploads folder using the uploaded photo's file name
-        image: "http://localhost:4000/uploads/"+ pic.name.toString()
+        image: "http://52.78.18.121:8080/uploads/"+ pic.name.toString()
       });
 
       var config = {
@@ -58,11 +58,11 @@
     that.upload = function(file){
       Upload.upload({
         //webAPI exposed to upload the file
-        url: 'http://localhost:4000/uploads', 
+        url: 'http://52.78.18.121:8080/uploads',
         //pass file as data, should be user ng-model
         data:{file:file}
       //upload function returns a promise
-      }).then(function (resp){ 
+      }).then(function (resp){
         if(resp.data.error_code === 0) { //validate success
           console.log('Success ' + that.up.file.name + 'uploaded. Response: ');
         } else {
