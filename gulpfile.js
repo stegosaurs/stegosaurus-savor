@@ -6,6 +6,14 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var bs = require('browser-sync').create();
 var nodemon = require('gulp-nodemon');
+var Server = require('karma').Server;
+
+gulp.task('test', function(done) {
+  new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
+});
 
 gulp.task('browser-sync', ['nodemon'], function() {
 	bs.init(null, {
