@@ -47,7 +47,7 @@ gulp.task('bs-delay', function () {
 gulp.task('nodemon', function (cb) {
   var started = false;
   return nodemon({
-    script: './server/server',
+    script: './index.js',
     ext: 'js'
   }).on('start', function () {
     //avoid nodemon being started multiple times
