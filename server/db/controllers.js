@@ -1,5 +1,6 @@
 var Restaurant = require('./models');
 var _ = require('underscore');
+var express = require('express');
 
 module.exports = {
   //function not being used...
@@ -24,13 +25,13 @@ module.exports = {
   },
   //function not being used...
   fetchOne: function(id, callback) {
-    Restaurant.findById(id).then(function(err, restaurant) {
-      if (err) {
-        console.log(err);
-      } else {
+    Restaurant.findById(id).then(function(restaurant){
         callback(restaurant);
       }
-    })
+    )
+    .catch(function(err){
+      console.log(err);
+    });
   },
 
   addRestaurantReview: function(restaurant, callback) {
@@ -45,21 +46,14 @@ module.exports = {
   },
   //function not being used...
   updateOne: function(id, newProperties, callback) {
-    //refactor to use promises?
-    fetchOne(id, function(err, user) {
-      if (err) {
-        console.log(err);
-      } else {
-        _.extend(user, newProperties);
-        user.save(function(err, updatedUser) {
-          if (err) {
-            console.log('There was an error updating entry')
-          } else {
-            callback(updatedUser);
-          }
-        })
-      }
-    })
+    Restaurant.findByIdAndUpdate(id, newProperties)
+      .then(function () {
+        callback("Restaurant Updated");
+      })
+      .catch(function (err) {
+      console.log(err);
+      res.status(404).send('DatabaseError');
+    });
   },
   //function not being used...
   deleteOne: function(id, callback) {
@@ -73,8 +67,8 @@ module.exports = {
           } else {
             callback(removed);
           }
-        })
+        });
       }
-    })
+    });
   }
 };
