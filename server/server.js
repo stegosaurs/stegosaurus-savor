@@ -1,10 +1,10 @@
 //Set up express.
 var express = require('express');
-var app = express();
 var jwt = require('express-jwt');
 var cors = require('cors');
-var port = process.env.PORT || 4000;
 var morgan = require('morgan');
+
+var app = express();
 
 // Set up mongoose
 var mongoose = require('mongoose');
@@ -52,7 +52,4 @@ app.put('/api/restaurants/:id', handler.updateRestaurantInfo);
 
 app.delete('/api/users/:id', handler.deleteRestaurant);
 
-// Start server
-var port = process.env.PORT || 3000;
-app.listen(port);
-console.log('Listening at port: ' + port);
+module.exports = app;
