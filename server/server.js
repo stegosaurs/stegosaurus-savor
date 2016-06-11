@@ -48,7 +48,7 @@ app.get('/api/restaurants', handler.getRestaurants);
 
 app.get('/api/restaurants/:id', handler.getOneRestaurant);
 
-app.put('/api/restaurants:id', handler.updateRestaurantInfo);
+app.put('/api/restaurants/:id', handler.updateRestaurantInfo);
 
 app.delete('/api/users/:id', handler.deleteRestaurant);
 
