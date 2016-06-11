@@ -34,6 +34,11 @@ function toolbarController(auth, store, $location, ngDialog, $scope) {
     $location.path('/');
     if (!$rootScope.$$phase) $rootScope.$apply();
   }
+
+  function goHome() {
+    $location.path('/');
+  }
+
   /*
    * function that launches review dialog box on pencil icon click in toolbar
    */

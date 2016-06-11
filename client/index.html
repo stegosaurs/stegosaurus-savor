@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Savor</title>
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
   <!-- Auth0's lock widget library -->
   <script type="text/javascript" src="https://cdn.auth0.com/js/lock-7.12.min.js"></script>
-
-  <!-- AngularJS -->
   <script src="bower_components/angular/angular.js"></script>
-
   <!-- Angular cookie wrapper library for client cookies -->
   <script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.js"></script>
   <!-- Angular's Router Library for SPA -->
@@ -19,10 +19,8 @@
   <script src="http://cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js" type="text/javascript"> </script>
   <!-- Angular wrapper library for JWT-->
   <script src="http://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js" type="text/javascript"> </script>
-
   <!-- ui-route -->
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-
   <!-- Things for Angular Material -->
   <script src="bower_components/angular-animate/angular-animate.min.js"></script>
   <script src="bower_components/angular-aria/angular-aria.min.js"></script>
@@ -34,20 +32,18 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/10.0.4/ng-file-upload.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/10.0.4/ng-file-upload-shim.min.js'></script>
 
-  <!-- Angular Material -->
-  <script src="bower_components/angular-material/angular-material.min.js"></script>
-
   <!-- Auth0's Viewport settings-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-  <!-- My CSS -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.css">
-  <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.css">
-
- <!--  ANGULAR MATERIAL -->
+  <!--  ANGULAR MATERIAL -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <script src="bower_components/angular-material/angular-material.min.js"></script>
   <script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+
+  <!-- My CSS -->
+  <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.css">
+  <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.css">
+  <link rel="stylesheet" href="/styles.css">
 
   <!-- My Scripts -->
   <script src="app.js"></script>
@@ -59,21 +55,18 @@
   <script src="/views/components/review/review.ctrl.js"></script>
   <script src="/views/components/user/user.dir.js"></script>
   <script src="/views/components/user/user.ctrl.js"></script>
+  <script src="/views/components/home/home.dir.js"></script>
+  <script src="/views/components/home/home.ctrl.js"></script>
   <script src="bower_components/ng-dialog/js/ngDialog.js"></script>
   <script src="bower_components/underscore/underscore.js"></script>
 
 </head>
 
-<body ng-app="savor" ng-controller="savorCtrl">
-
-  <toolbar></toolbar>
-  <span class="containerbackground"> </span>
-  <div ui-view=''></div>
-
-  <script>
-    $('body').append(
-    '<a href="http://hackreactor.com/remote-beta"> <img style="position: fixed; top: 0; right: 0; border: 0;" src="http://i.imgur.com/x86kKmF.png" alt="Built at Hack Reactor Remote Beta"> </a>');
-  </script>
-
+<body>
+<div class='lgContent' ng-app="savor" ng-controller="savorCtrl">
+    <toolbar></toolbar>
+    <span class="containerbackground"> </span>
+    <div ui-view=''></div>
+  </div>
 </body>
 </html>
