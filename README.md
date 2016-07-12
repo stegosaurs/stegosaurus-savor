@@ -2,6 +2,8 @@
 
 > A restaurant recollection application for food and beverage enthusiasts who desire to remember every meal.
 
+![alt tag](https://flic.kr/p/JUQFo7)
+
 ## Team
 
   - __Product Owner__: Keeley Nakamoto
