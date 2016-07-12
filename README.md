@@ -2,7 +2,7 @@
 
 > A restaurant recollection application for food and beverage enthusiasts who desire to remember every meal.
 
-![alt tag](https://flic.kr/p/JUQFo7)
+![alt tag](https://c7.staticflickr.com/8/7023/28164939902_8da576d3bb_h.jpg)
 
 ## Team
 
